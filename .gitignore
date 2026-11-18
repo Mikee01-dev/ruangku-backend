@@ -1,0 +1,24 @@
+# Environment variables
+.env
+.env.local
+
+# Executable binary
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/
+ruangku-backend
+
+# Test files
+*.test
+*.out
+
+# IDE & OS
+.idea/
+.vscode/
+.DS_Store
+
+# Logs
+*.log
