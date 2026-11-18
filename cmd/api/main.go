@@ -8,7 +8,6 @@ import (
 	"github.com/joho/godotenv"
 
 	roomHttp "github.com/Mikee01-dev/ruangku-backend/internal/delivery/http"
-	
 	"github.com/Mikee01-dev/ruangku-backend/internal/repository"
 	"github.com/Mikee01-dev/ruangku-backend/internal/usecase"
 	"github.com/Mikee01-dev/ruangku-backend/pkg/database"
@@ -17,10 +16,12 @@ import (
 func main() {
 	err := godotenv.Load()
 	if err != nil {
-		log.Println("Peringatan: File .env tidak ditemukan")
+		log.Println("Peringatan: File .env tidak ditemukan, menggunakan env sistem")
 	}
 
-	db, err := database.NewPostgres()
+	cfg := database.ConfigFromEnv()
+
+	db, err := database.NewPostgres(cfg)
 	if err != nil {
 		log.Fatalf("Gagal koneksi ke database: %v", err)
 	}
@@ -28,7 +29,6 @@ func main() {
 
 	roomRepo := repository.NewRoomRepository(db)
 	roomUsecase := usecase.NewRoomUsecase(roomRepo)
-	
 	roomDelivery := roomHttp.NewRoomDelivery(roomUsecase)
 
 	mux := http.NewServeMux()
