@@ -29,8 +29,8 @@ RuangKu adalah sistem berbasis web yang membantu mahasiswa dan organisasi kemaha
 | Orang | Nama | Branch | File Utama |
 | :--- | :--- | :--- | :--- |
 | **A (Git Master)** | **Michael** | `main`, `feat/usecase-room`, `feat/wiring` | `room_usecase.go`, `cmd/api/main.go`, `README.md` |
-| **B** | **Sovia** | `feat/migration`, `feat/repository-room`, `feat/database-pkg`, `feat/delivery-room` | `001_init.sql`, `room_repository.go`, `postgres.go`, `room_delivery.go` |
-| **C** | **Rafael** | `feat/domain` | `room.go`, `user.go`, `booking.go` |
+| **B** | **Sovia** | `feat/migration`, `feat/repository-room`, `feat/database-pkg` | `001_init.sql`, `room_repository.go`, `postgres.go` |
+| **C** | **Rafael** | `feat/domain`, `feat/delivery-room` | `room.go`, `user.go`, `booking.go`, `room_delivery.go` |
 
 ## Cara Menjalankan Proyek
 1. Clone repository ini:
